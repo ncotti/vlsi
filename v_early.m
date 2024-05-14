@@ -27,11 +27,9 @@ for j=1:length(D)
         gds = diff(id)/(vds(2)-vds(1));
         lambda = gds./id(floor(end/2));
         vEarly = lambda.^-1;
-        %lambda = gds./id(1:end-1);
-        %lambda = id(1:end-1)
         
         subplot(2,1,1);
-        plot(vds, abs(id));
+        plot(vds, abs(id)*1e6);
         hold on;
     
         subplot(2,1,2);
@@ -46,7 +44,7 @@ for j=1:length(D)
     legend(Legend{:,1});
     grid on;
     xlabel("V_{ds} [V]");
-    ylabel("I_D [A]");
+    ylabel("I_D [uA]");
     xlim([min(vds), max(vds)]);
     
     subplot(2,1,2)
