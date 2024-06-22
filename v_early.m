@@ -3,7 +3,8 @@
 clc; clear; close all;
 addpath("HspiceToolbox");
 
-L = (1:1:12)*1e-6;      % Channel length
+L_name = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
+L = [0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9];  % Length [um]
 min_vds = 0.4;          % Minimum VDS to plot V_early     
 D = ["nmos", "pmos"];   % Devices
 
@@ -12,7 +13,7 @@ for j=1:length(D)
     Legend = cell(length(L),1);
 
     for i=1:length(L)
-        x = loadsig(sprintf('hspice_vds/hspice_%s_l%d.sw0', D(j), L(i)*1e6));
+        x = loadsig(sprintf('hspice_vds/hspice_%s_l%s.sw0', D(j), L_name(i)));
         
         vds = evalsig(x, 'vds');
         if(D(j) == "nmos")
@@ -35,7 +36,7 @@ for j=1:length(D)
         subplot(2,1,2);
         plot(vds(index:end-1), vEarly(index:end));
         hold on;
-        Legend{i,1}=sprintf("L=%dum", L(i)*1e6);
+        Legend{i,1}=sprintf("L=%0.1fum", L(i));
     end
 
     %% Plotting
