@@ -2,6 +2,7 @@
 % This file demonstrates that the curves "gm/Id(Vgs)" and 
 % "gm/Id( Id/(W/L) )" are independent of the values of "L" and "W", i.e.,
 % the length and width of the channel.
+% All curves were simulated with VDS=0.6V.
 clc; clear; close all;
 addpath("HspiceToolbox")
 
