@@ -5,8 +5,8 @@ clc; clear; close all;
 addpath("HspiceToolbox")
 
 W = 5e-6; % Channel width
-L = [0.1 0.2 0.5 0.8 1 5]*1e-6;        % Channel length
-L_name = ["01", "02", "05", "08", "1", "5"];
+L = [0.1 0.2 0.3 0.4 0.5 0.8 1 5]*1e-6;        % Channel length
+L_name = ["01", "02", "03", "04", "05", "08", "1", "5"];
 D = ["nmos", "pmos"];               % Devices
 
 for k=1:length(D)

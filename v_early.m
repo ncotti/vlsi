@@ -3,9 +3,9 @@
 clc; clear; close all;
 addpath("HspiceToolbox");
 
-L_name = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
-L = [0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9];  % Length [um]
-min_vds = 0.4;          % Minimum VDS to plot V_early     
+L_name = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "1", "5"];
+L = [0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9, 1, 5];  % Length [um]
+min_vds = 0.3;          % Minimum VDS to plot V_early     
 D = ["nmos", "pmos"];   % Devices
 
 for j=1:length(D)
