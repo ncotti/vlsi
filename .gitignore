@@ -1,3 +1,6 @@
 *.asv
 .secrets.sh
 PrimeSimHSPICE
+SAED90/*
+VLSI_projects/*
+!*/.gitkeep
